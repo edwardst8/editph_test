@@ -1,0 +1,166 @@
+#root {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+
+.logo {
+  height: 3em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.app-container {
+  position: relative; /* Necesare pentru poziționarea absolută a header-ului */
+  height: 95vh; /* Ajustează înălțimea pentru a lăsa loc header-ului */
+  overflow: hidden;
+}
+
+.header {
+  flex:100%;
+  padding-top: 10px; /* Padding pentru text */
+}
+
+.container {
+  display: flex;
+  flex: 1;
+
+}
+
+.menu {
+  display: flex;              /* Activează flexbox */
+  flex-direction: column;     /* Așează elementele pe verticală */
+  justify-content: center;    /* Centrează conținutul pe verticală */
+  align-items: center;        /* Centrează conținutul pe orizontală */
+  height: 100vh;             /* Setează înălțimea la 100% din viewport */
+}
+
+.menu-container {
+  padding-left: 10px;
+  flex-basis: 1%;
+  background-color: #262626;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.image-container,
+.edited-image-container {
+  flex:1;
+  padding: 0 50px;
+  display: flex;
+  justify-content: center; /* Centrează imaginea pe orizontală */
+  align-items: center; /* Centrează imaginea pe verticală */
+  position: relative; /* Necesare pentru controlul poziției */
+  
+}
+
+.zoomable-image {
+  position: relative; /* Necesare pentru controlul poziției */
+}
+
+.zoomable-image img {
+  width: 100%; /* Imaginea va ocupa întreaga lățime a div-ului zoomable */
+  object-fit: cover; /* Asigură că imaginea umple complet div-ul zoomable */
+}
+
+
+.zoomable-image:hover {
+  z-index: 10; /* Asigură că imaginea este deasupra altor elemente */
+}
+
+.menu input[type="file"] {
+  display: none; /* Ascunde input-ul original */
+}
+
+.menu label {
+  display: block; /* Face ca fiecare buton să ocupe întreaga lățime */
+  padding: 10px 20px; /* Padding pentru buton */
+  border-radius: 5px; /* Colțuri rotunjite */
+  cursor: pointer; /* Cursor pointer pe hover */
+  margin-bottom: 10px; /* Spațiu sub buton */
+}
+
+.menu button {
+  display: block; /* Asigură că butoanele sunt afișate pe rânduri separate */
+  border-radius: 5px; /* Colțuri rotunjite */
+  cursor: pointer; /* Cursor pointer pe hover */
+  margin-bottom: 10px; /* Spațiu sub buton */
+  background-color: #262626;
+  color:#fff;
+  text-align: center;
+}
+
+.menu button:hover {
+  background-color: #0056b3; /* Fundal mai închis pe hover */
+}
+
+.aspect-ratio-menu {
+  position: absolute; /* Poziționează submenul fără a afecta layout-ul principal */
+  top: 4em; /* Aliniere la partea de sus */
+  left: -3em; /* Plasează submenul la dreapta meniului principal */
+  width: 250px; /* Lățime fixă pentru submeniu */
+  padding: 20px; /* Padding pentru conținut */
+  background-color: #262626; /* Fundal semi-transparent */
+  color: white; /* Text alb */
+  z-index: 1000; /* Asigură că este deasupra altor elemente */
+  border-radius: 5px; /* Colțuri rotunjite */
+}
+
+
+.menu button:disabled {
+  background-color: #d3d3d3; /* Culoarea de fundal pentru butoane dezactivate */
+  color: #a9a9a9; /* Culoarea textului pentru butoane dezactivate */
+  cursor: not-allowed; /* Schimbă cursorul la not-allowed */
+}
+
+.saturation-submenu {
+  position: absolute;
+  z-index: 3;
+  background-color: #212121;
+  padding: 10px;
+  left: 5vw;
+  border-radius: 5px;
+  margin-left: -35%;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+  top: 10px; /* Poziționează submenul sub buton */
+
+}
+
+.saturation-submenu label {
+  display: block; /* Asigură-te că etichetele sunt pe linii separate */
+  font-size: 0.8em;
+}
+
+.saturation-submenu input[type="range"] {
+  width: calc(100% - 20px); /* Face sliderul să ocupe toată lățimea submenului */
+}
